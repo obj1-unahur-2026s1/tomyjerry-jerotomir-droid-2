@@ -9,6 +9,17 @@ method tomCorrio(distancia) {
 method VelocidadMaxima() {
   return  5 + energia / 10
 }
+method tomPuedeCazarRatonAdistancia(raton) {
+  return  raton.distanciaDeTom() / 2 < energia
+}
+method cazarRatonAdistancia(raton)
+{
+ if(self.tomPuedeCazarRatonAdistancia(raton))
+ {
+   self.tomCorrio(raton.distanciaDeTom())
+   self.tomComioUnRaton(raton)
+ }
+}
 }
 
 object jerry {
@@ -20,12 +31,29 @@ object jerry {
   method pesoDeRaton() {
     return edad * 20
   }
+   method distanciaDeTom()
+  {
+    return 20
+  }
 }
 
 object nibbles {
     method pesoDeRaton() {
     return 35
   } 
+   method distanciaDeTom()
+  {
+    return 20
+  }
+}
+object jhonny {
+  method distanciaDeTom()
+  {
+    return 5
+  }
+  method pesoDeRaton() {
+    return 20
+  }
 }
 
 // Inventar otro ratón

@@ -36,8 +36,16 @@ describe "Grupo de test" {
      tom.tomCorrio(38)
      assert.equals(24, tom.VelocidadMaxima())
   }
-
-
+ //Etapa 2
+ test "si tom caza a jerry, su velocidad pasa a ser 14.2(su energia es de 50)" {
+  tom.cazarRatonAdistancia(jerry)
+  assert.equals(14.2, tom.VelocidadMaxima())
+  }
+ test "si tom caza a jhnny, su velocidad pasa a ser 17.5(su energia es de 92)" {
+  tom.cazarRatonAdistancia(jerry)
+  tom.cazarRatonAdistancia(jhonny)
+  assert.equals(17.15, tom.VelocidadMaxima())
+  }
 
   /*
   test "test 3" {
